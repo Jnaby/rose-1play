@@ -306,7 +306,7 @@ client.on('message', async msg => {
 
 					
 
-/////////////////					
+**/////////////////					
 
 					try {
 
@@ -326,7 +326,7 @@ client.on('message', async msg => {
 
 						console.error(err);
 
-						return msg.channel.send('No one respone a number!!');
+						return msg.channel.send('**No one respone a number!!**');
 
                     }
 
@@ -344,7 +344,7 @@ client.on('message', async msg => {
 
 					console.error(err);
 
-					return msg.channel.send("I didn't find any results!");
+					return msg.channel.send("**I didn't find any results!**");
 
 				}
 
@@ -364,13 +364,13 @@ client.on('message', async msg => {
 
 
 
-		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
+		if (!msg.member.voiceChannel) return msg.channel.send("**You Must be in a Voice channel to Run the Music commands!**");
 
-        if (!serverQueue) return msg.channel.send("There is no Queue to skip!!");
+        if (!serverQueue) return msg.channel.send("**There is no Queue to skip!!**");
 
 
 
-		serverQueue.connection.dispatcher.end('Ok, skipped!');
+		serverQueue.connection.dispatcher.end('**Ok, skipped!**');
 
         return undefined;
 
@@ -380,7 +380,7 @@ client.on('message', async msg => {
 
 
 
-		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
+		if (!msg.member.voiceChannel) return msg.channel.send("**You Must be in a Voice channel to Run the Music commands!**");
 
         if (!serverQueue) return msg.channel.send("There is no Queue to stop!!");
 
@@ -388,7 +388,7 @@ client.on('message', async msg => {
 
 		serverQueue.songs = [];
 
-		serverQueue.connection.dispatcher.end('Ok, stopped & disconnected from your Voice channel');
+		serverQueue.connection.dispatcher.end('**Ok, stopped & disconnected from your Voice channel**');
 
         return undefined;
 
@@ -398,9 +398,9 @@ client.on('message', async msg => {
 
 
 
-		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
+		if (!msg.member.voiceChannel) return msg.channel.send("**You Must be in a Voice channel to Run the Music commands!**");
 
-		if (!serverQueue) return msg.channel.send('You only can use this command while music is playing!');
+		if (!serverQueue) return msg.channel.send('**You only can use this command while music is playing!**');
 
         if (!args[1]) return msg.channel.send(`The bot volume is **${serverQueue.volume}**`);
 
@@ -434,7 +434,7 @@ client.on('message', async msg => {
 
 		
 
-		if (!serverQueue) return msg.channel.send('There is no Queue!!');
+		if (!serverQueue) return msg.channel.send('**There is no Queue!!**');
 
 		let index = 0;
 
@@ -466,7 +466,7 @@ client.on('message', async msg => {
 
 		}
 
-		return msg.channel.send('There is no Queue to Pause!');
+		return msg.channel.send('**There is no Queue to Pause!**');
 
 	} else if (command === "resume") {
 
